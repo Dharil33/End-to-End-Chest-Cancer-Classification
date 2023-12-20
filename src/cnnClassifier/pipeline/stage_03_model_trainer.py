@@ -1,4 +1,4 @@
-from cnnClassifier.config.configuration import ConfigurationManager
+from cnnClassifier.config.configuration import TrainModelConfigurationManager
 from cnnClassifier.components.model_trainer import Training
 from cnnClassifier import logger
 
@@ -11,7 +11,7 @@ class ModelTrainingPipeline:
         pass
 
     def main(self):
-        config = ConfigurationManager()
+        config = TrainModelConfigurationManager()
         training_config = config.get_training_config()
         training = Training(config=training_config)
         training.get_base_model()

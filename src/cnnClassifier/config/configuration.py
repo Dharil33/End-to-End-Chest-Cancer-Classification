@@ -3,7 +3,7 @@ from cnnClassifier.utils.common import read_yaml, create_directories
 from cnnClassifier.entity.config_entity import DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig,EvaluationConfig
 import os
 
-class ConfigurationManager:
+class DataIngestionConfigurationManager:
     def __init__(self,
                  config_filepath = CONFIG_FILE_PATH,
                  params_filepath = PARAMS_FILE_PATH):
@@ -27,7 +27,7 @@ class ConfigurationManager:
         return data_ingestion_config
 
 
-class ConfigurationManager:
+class PrepareBaseModelConfigurationManager:
     def __init__(
         self,
         config_filepath = CONFIG_FILE_PATH,
@@ -58,7 +58,7 @@ class ConfigurationManager:
         return prepare_base_model_config
     
 
-class ConfigurationManager:
+class TrainModelConfigurationManager:
     def __init__(
         self,
         config_filepath = CONFIG_FILE_PATH,
@@ -93,7 +93,7 @@ class ConfigurationManager:
 
         return training_config
     
-class ConfigurationManager:
+class EvaluationConfigurationManager:
     def __init__(
         self, 
         config_filepath = CONFIG_FILE_PATH,
@@ -112,4 +112,4 @@ class ConfigurationManager:
             params_image_size=self.params.IMAGE_SIZE,
             params_batch_size=self.params.BATCH_SIZE
         )
-        return eval_config
+        return eval_config 
